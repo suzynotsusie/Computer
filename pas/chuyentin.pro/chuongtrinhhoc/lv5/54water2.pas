@@ -1,0 +1,27 @@
+const
+    nhap = '54water2.inp';
+    xuat = '54water2.out';
+function min(a, b:longint):longint;
+begin
+    if a < b then exit(a) else exit(b);
+end;
+var
+        n, i:longint;
+        a, l, r:array[1..100000] of longint;
+        ans:int64;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(n);
+ans:=0;
+    for i:=1 to n do read(a[i]);
+    l[1]:=a[1]; r[n]:= a[n];
+    for i:=n - 1 downto 2 do if a[i] > r[i + 1] then r[i]:=a[i] else r[i]:=r[i + 1];
+    for i:=2 to n - 1 do
+    begin
+        if a[i] > l[i - 1] then l[i]:=a[i] else l[i]:=l[i - 1];
+        ans:=ans + min(l[i], r[i]) - a[i];
+    end;
+    write(ans);
+close(input);close(output);
+end.

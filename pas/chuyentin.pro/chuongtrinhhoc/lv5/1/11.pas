@@ -1,0 +1,23 @@
+const
+    nhap = 'snnsonhonhat.inp';
+    xuat = 'snnsonhonhat.out';
+var a:array[-100..100] of byte;
+    n:byte;
+    x,i:shortint;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(n);
+    for i:=1 to n do
+    begin
+        read(x);
+        inc(a[x]);
+    end;
+    for i:=-100 to 100 do if a[i] = 1 then
+    begin
+        write(i);
+        exit;
+    end;
+    write('khong');
+close(input);close(output);
+end.

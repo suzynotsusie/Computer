@@ -1,0 +1,46 @@
+const
+    nhap = 'xaudadep.inp';
+    xuat = 'xaudadep.out';
+var num,i,j,count:byte;
+    n:string;
+    a:array[1..4] of byte;
+    b:array[1..4] of char;
+    c:array[1..252] of char;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(num);
+    readln(n);
+    if length(n) mod 4 <> 0 then
+    begin
+        write('===');
+        exit;
+    end;
+    b[1]:='A';b[2]:='C';b[3]:='G';b[4]:='T';
+    for i:=1 to length(n) do
+    case n[i] of
+        'A':inc(a[1]);
+        'C':inc(a[2]);
+        'G':inc(a[3]);
+        'T':inc(a[4]);
+    end;
+    num:=length(n) div 4;
+    if (a[1] > num)or(a[2] > num)or(a[3] > num)or(a[4] > num) then
+    begin
+        write('===');
+        exit;
+    end;
+    count:=0;
+    for i:=1 to 4 do for j:=a[i] + 1 to num do
+    begin
+        inc(count);
+        c[count]:=b[i];
+    end;
+    count:=0;
+    for i:=1 to length(n) do if n[i] = '?' then
+    begin
+        inc(count);
+        write(c[count]);
+    end else write(n[i]);
+close(input);close(output);
+end.

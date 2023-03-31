@@ -1,0 +1,15 @@
+const
+    nhap = 'makhoa.inp';
+    xuat = 'makhoa.out';
+var a:array[48..57] of byte;
+    x,y:string;
+    i:byte;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(x);read(y);
+    for i:=1 to length(x) do a[ord(x[i])]:=1;
+    for i:=1 to length(y) do if a[ord(y[i])] = 1 then a[ord(y[i])]:=2;
+    for i:=57 downto 48 do if a[i] = 2 then write(chr(i));
+close(input);close(output);
+end.

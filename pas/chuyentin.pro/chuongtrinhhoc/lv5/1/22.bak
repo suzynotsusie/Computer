@@ -1,0 +1,25 @@
+const
+    nhap = 'chucai.inp';
+    xuat = 'chucai.out';
+var s:string;
+    i:byte;
+    a:array[65..99] of byte;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(s);
+    for i:=1 to length(s) do if s[i] in ['A'..'Z'] then inc(a[ord(s[i])]);
+    for i:=65 to 99 do if a[i] > 0 then writeln(chr(i),' ',a[i]);
+{
+var s:string;
+    i:byte;
+    c:char;
+    a:array['A'..'Z'] of byte;
+begin
+    readln(s);
+    for i:=1 to length(s) do if s[i] in ['A'..'Z'] then inc(a[ord(s[i])]);
+    for c:='A' to 'Z' do if a[c] > 0 then writeln(chr(c),' ',a[c]);
+end.
+}
+close(input);close(output);
+end.

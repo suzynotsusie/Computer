@@ -1,0 +1,16 @@
+const
+    nhap = '35change.inp';
+    xuat = '35change.out';
+var s,a:string;
+    i,x,y:byte;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    read(s);
+    a:='1234567812345678';
+    for i:=1 to length(s) do if s[i] = 'L' then inc(x) else inc(y);
+    WRITELN(X,' ',Y);
+    if x = y then write('12345678') else
+    if x > y then write(copy(a,x MOD 10 - y + 1,8)) else write(copy(a,8 - y + x + 1,8));
+close(input);close(output);
+end.

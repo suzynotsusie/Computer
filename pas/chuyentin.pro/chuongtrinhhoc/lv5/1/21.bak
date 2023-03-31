@@ -1,0 +1,22 @@
+const
+    nhap = 'ktkhac.inp';
+    xuat = 'ktkhac.out';
+var
+    n,i,count,num:longint;
+    x:string;
+    j:byte;
+    a:array[65..90] of byte;
+begin
+assign(input, nhap);reset(input);
+assign(output, xuat);rewrite(output);
+    readln(n);
+    for i:=1 to n do
+    begin
+        for j:=65 to 90 do a[j]:=0;
+        readln(x);count:=0;
+        for j:=1 to length(x) do inc(a[ord(x[j])]);
+        for j:=65 to 90 do if a[j] > 0 then count:=count + 1;
+        writeln(count);
+    end;
+close(input);close(output);
+end.
