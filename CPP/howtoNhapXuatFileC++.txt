@@ -1,0 +1,25 @@
+open(tên_tệp, chế_độ) : Mở tệp với tên được chỉ định bởi tham số đầu tiên và chế độ truy cập được chỉ định bởi tham số thứ hai. Chế độ có thể là in, out, hay binary. Ví dụ: myfile.open("filename.txt", ios::out);
+
+close() : Đóng tệp.
+
+is_open() : Kiểm tra xem tệp đã mở hay chưa.
+
+eof() : Kiểm tra xem đã đọc đến cuối tệp hay chưa.
+
+good() : Kiểm tra xem các trạng thái của tệp có ổn định hay không. Nếu không có lỗi xảy ra thì trả về true, ngược lại trả về false.
+
+fail() : Kiểm tra xem các trạng thái của tệp có xảy ra lỗi hay không.
+
+clear() : Xóa tất cả các lỗi hoặc trạng thái lỗi khỏi tệp.
+
+seekg(offset, mode) và seekp(offset, mode) : Dùng để di chuyển con trỏ đọc hoặc ghi trong tệp. Tham số offset là số byte muốn di chuyển, và mode là kiểu di chuyển, có thể là ios::beg (bắt đầu từ đầu tệp), ios::cur (bắt đầu từ vị trí hiện tại), hoặc ios::end (bắt đầu từ cuối tệp). Ví dụ: myfile.seekg(0, ios::beg);
+
+tellg() và tellp() : Trả về vị trí của con trỏ đọc hoặc ghi trong tệp.
+
+write(data, size) : Ghi dữ liệu vào tệp. Tham số đầu tiên là con trỏ tới dữ liệu cần ghi, và tham số thứ hai là kích thước của dữ liệu.
+
+read(data, size) : Đọc dữ liệu từ tệp. Tham số đầu tiên là con trỏ tới nơi lưu trữ dữ liệu, và tham số thứ hai là kích thước của dữ liệu.
+
+getline(string, size) : Đọc dữ liệu từ tệp vào chuỗi cho đến khi ký tự kết thúc dòng được đọc hoặc đến khi đọc hết tệp. Tham số đầu tiên là chuỗi để lưu trữ dữ liệu, và tham số thứ hai là kích thước tối đa của chuỗi.
+
+operator>>() : Đọc dữ liệu từ tệp theo kiểu phù hợp với kiểu dữ liệu của biến được truyền vào.
