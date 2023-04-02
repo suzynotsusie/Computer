@@ -2,14 +2,10 @@
 using namespace std;
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
-	cin.tie(0);
-	freopen("Bai 24.inp", "r", stdin);
-	freopen("Bai 24.out", "w", stdout);
-	char chr;
-	cin >> chr;
-	cout << chr;
-	
-	return 0;
+    char c;
+    cin >> c;
+    if (c >= 'a' && c <= 'z') cout << char(c + 1);
+    else if (c >= 'A' && c <= 'Z') cout << char(c + 33);
+    else cout << "INVALID";
+    return 0;
 }
