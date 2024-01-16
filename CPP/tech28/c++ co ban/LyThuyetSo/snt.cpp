@@ -28,6 +28,6 @@ int main() {
 //	cout << isPrime(n) << endl;
 	sieve(prime, sizeof(prime) - 5);
 //	for (ll i = 2; i <= n; i++) if (prime[i]) cout << i << " ";
-//	cout << prime[3] << prime[5] << prime[];
+	cout << prime[3] << prime[5] << prime[9];
 	return 0;
 }
