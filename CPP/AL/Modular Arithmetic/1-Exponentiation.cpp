@@ -1,5 +1,5 @@
 //https://cses.fi/problemset/task/1095
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #define ll long long
@@ -12,7 +12,7 @@ ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 //	cout << c;
 	cin >> n;
 	for (int i = 0; i < n; i ++) {
-		ans = 1;
+	ans = 1;
 		cin >> a >> b;
 		for (ll j = 0; j < b; j++) {
 			ans *= a;
